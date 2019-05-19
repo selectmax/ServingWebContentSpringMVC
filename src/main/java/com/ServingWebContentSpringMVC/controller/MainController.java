@@ -1,4 +1,4 @@
-package com.ServingWebContentSpringMVC;
+package com.ServingWebContentSpringMVC.controller;
 
 import com.ServingWebContentSpringMVC.domain.Message;
 import com.ServingWebContentSpringMVC.repos.MessageRepo;
@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 @Controller
-public class GreetingController {
+public class MainController {
 
     @Autowired
     private MessageRepo messageRepo;
