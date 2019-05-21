@@ -18,7 +18,7 @@ public class RegistrationController {
 
     @GetMapping("/registration")
     public String registration(){
-        return "registration";
+        return "registration.ftl";
     }
 
     @PostMapping("/registration")
@@ -27,7 +27,7 @@ public class RegistrationController {
 
         if (userFromDb != null) {
             model.put("message", "User exist!");
-            return "registration";
+            return "registration.ftl";
         }
 
         user.setActive(true);

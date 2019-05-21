@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -21,14 +20,14 @@ public class MainController {
 
     @GetMapping("/")
     public String greeting(Map<String, Object> model){
-        return "greeting";
+        return "greeting.ftl";
     }
 
     @GetMapping("/main")
     public String main(Map<String, Object> model){
         Iterable<Message> messages = messageRepo.findAll();
         model.put("messages", messages);
-        return "main";
+        return "main.ftl";
     }
 
     @PostMapping("/main")
@@ -40,7 +39,7 @@ public class MainController {
         messageRepo.save(message);
         Iterable<Message> messages = messageRepo.findAll();
         model.put("messages", messages);
-        return "main";
+        return "main.ftl";
     }
 
     @PostMapping("filter")
@@ -53,7 +52,7 @@ public class MainController {
             messages = messageRepo.findAll();
         }
         model.put("messages", messages);
-        return "main";
+        return "main.ftl";
     }
 }
 
