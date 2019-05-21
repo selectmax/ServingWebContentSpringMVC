@@ -20,14 +20,14 @@ public class MainController {
 
     @GetMapping("/")
     public String greeting(Map<String, Object> model){
-        return "greeting.ftl";
+        return "greeting";
     }
 
     @GetMapping("/main")
     public String main(Map<String, Object> model){
         Iterable<Message> messages = messageRepo.findAll();
         model.put("messages", messages);
-        return "main.ftl";
+        return "main";
     }
 
     @PostMapping("/main")
@@ -39,7 +39,7 @@ public class MainController {
         messageRepo.save(message);
         Iterable<Message> messages = messageRepo.findAll();
         model.put("messages", messages);
-        return "main.ftl";
+        return "main";
     }
 
     @PostMapping("filter")
@@ -52,7 +52,7 @@ public class MainController {
             messages = messageRepo.findAll();
         }
         model.put("messages", messages);
-        return "main.ftl";
+        return "main";
     }
 }
 
